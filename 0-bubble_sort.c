@@ -28,8 +28,8 @@ void bubble_sort(int *array, size_t size)
 				swaps = 1;
 			}
 		}
-		if (num_swaps == 0)
+		if (swaps == 0)
 			break;
-		num_swaps = 0;
+		swaps = 0;
 	}
 }
