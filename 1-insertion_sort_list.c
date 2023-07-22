@@ -27,31 +27,58 @@ void insert_between(listint_t *first, listint_t *second, listint_t *node)
  * @list: pointer to head of linked list array
  * Return: None
  */
-
+/*
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr = *list;
-	listint_t *tmp_next = NULL;
+	listint_t *prev = NULL;
 	listint_t *tmp = NULL;
-	int tmp_val;
+	int curr_val;
 
-	while (curr && curr->next)
+	if (curr)
+		curr = curr->next;
+
+	while (curr)
 	{
-		tmp = curr->next;
-		tmp_next = curr->next;
-		tmp_val = tmp->n;
-		while (tmp_val < tmp->prev->n)
+		tmp = curr;
+		curr_val = curr->n;
+		while (tmp->prev && curr_val < tmp->prev->n)
 			tmp = tmp->prev;
-		if (curr->next != tmp)
+
+		if (curr != tmp)
 		{
-			tmp_next = tmp->next;
-			insert_between(tmp, tmp->prev, curr->next);
-			if (tmp_next)
-				tmp_next->prev = curr;
-			curr->next = tmp_next;
+			prev = curr->prev;
+			prev->next = curr->next;
+			insert_between(tmp->prev, tmp, curr);
+			if (tmp == *list)
+				*list = curr;
+			curr = prev->next;
+			if (curr)
+				curr->prev = prev;
+			print_list(*list);
+		} else
+			curr = curr->next;
+	}
+}
+*/
+void insertion_sort_list(listint_t **list)
+{
+	listint_t *curr = *list;
+	listint_t *tmp = NULL;
+
+	if (curr)
+		curr = curr->next;
+
+	while (curr)
+	{
+		tmp = curr;
+		curr = curr->next;
+		while (tmp->prev && tmp->n < tmp->prev->n)
+		{
+			if (tmp->prev == *list)
+				*list = tmp;
+			swap_nodes(tmp, tmp->prev);
 			print_list(*list);
 		}
-		curr = tmp_next;
-
 	}
 }
