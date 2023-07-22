@@ -31,18 +31,27 @@ void insert_between(listint_t *first, listint_t *second, listint_t *node)
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr = *list;
+	listint_t *tmp_next = NULL;
 	listint_t *tmp = NULL;
-	int curr_val;
+	int tmp_val;
 
 	while (curr && curr->next)
 	{
-		tmp = curr;
-		while (curr->n < tmp->n)
+		tmp = curr->next;
+		tmp_next = curr->next;
+		tmp_val = tmp->n;
+		while (tmp_val < tmp->prev->n)
 			tmp = tmp->prev;
-		if (curr->n > tmp->n)
-			curr->prev->next = curr->next;
+		if (curr->next != tmp)
+		{
+			tmp_next = tmp->next;
+			insert_between(tmp, tmp->prev, curr->next);
+			if (tmp_next)
+				tmp_next->prev = curr;
+			curr->next = tmp_next;
+			print_list(*list);
+		}
+		curr = tmp_next;
 
-		curr = curr->next;
-		insert_between(tmp, tmp->next, curr->prev);
 	}
 }
