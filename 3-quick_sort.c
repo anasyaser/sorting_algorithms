@@ -91,6 +91,7 @@ void quick_sort(int *array, size_t size)
 /* quick_sort(array + pi + 1, size - pi - 1);*/
 /* This code can be shorter, since it is array no need to recursive */
 /* just use while loop */
-	quick_helper(array, 0, size - 1, size);
+	if (size > 1)
+		quick_helper(array, 0, size - 1, size);
 }
 
