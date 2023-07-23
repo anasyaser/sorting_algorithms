@@ -13,7 +13,7 @@ void selection_sort(int *array, size_t size)
 	size_t i;
 	size_t o;
 	int tmp;
-	int min_idx;
+	size_t min_idx;
 
 	for (o = 0; o < size - 1; o++)
 	{
