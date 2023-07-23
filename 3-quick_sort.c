@@ -36,7 +36,7 @@ size_t partition(int *array, size_t low, size_t high)
 	i = low - 1;
 	for (j = low; j < high; j++)
 	{
-		if (array[j] < pivot || array[j] == pivot)
+		if (array[j] < pivot)
 		{
 			i++;
 			swap(array, i, j);
@@ -45,6 +45,20 @@ size_t partition(int *array, size_t low, size_t high)
 	i++;
 	swap(array, i, high);
 	return (i);
+}
+
+void quick_helper(int *array, size_t low, size_t high)
+{
+	size_t pi; /* pivot index */
+
+	if (low < high)
+	{
+		pi = partition(array, low, high);
+		printf("pi: %d\n", pi);
+		quick_helper(array, low, pi - 1);
+		quick_helper(array, pi + 1, high);
+	}
+
 }
 
 /**
@@ -57,14 +71,8 @@ size_t partition(int *array, size_t low, size_t high)
 
 void quick_sort(int *array, size_t size)
 {
-	size_t pi;
-
-	if (size > 1)
-	{
-		pi = partition(array, 0, size - 1);
-		quick_sort(array, pi);
-		print_array(array, size);
-		quick_sort(array + pi + 1, size - pi - 1);
-		print_array(array, size);
-	}
+	/* quick_sort(array, pi); */
+	/* quick_sort(array + pi + 1, size - pi - 1);*/
+	quick_helper(array, 0, size - 1);
 }
+
