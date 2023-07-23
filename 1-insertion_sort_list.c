@@ -32,15 +32,14 @@ void insertion_sort_list(listint_t **list)
 	listint_t *curr = *list;
 	listint_t *tmp = NULL;
 
-	if (list == NULL || !curr || !curr->next)
-		return;
 	if (curr)
 		curr = curr->next;
 	while (curr)
 	{
 		tmp = curr;
 		curr = curr->next;
-		while (tmp->prev && tmp->n < tmp->prev->n)
+		while (tmp->prev &&
+		       (tmp->n < tmp->prev->n || tmp->n == tmp>prev->n))
 		{
 			if (tmp->prev == *list)
 				*list = tmp;
