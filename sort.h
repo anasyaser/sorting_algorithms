@@ -14,17 +14,15 @@
  */
 typedef struct listint_s
 {
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
+	const int n;
+	struct listint_s *prev;
+	struct listint_s *next;
 } listint_t;
 
 /* print_array.c */
 void print_array(const int *array, size_t size);
 /* print_list.c */
 void print_list(const listint_t *list);
-/* swap.c */
-void swap(int *array, size_t i, size_t j);
 /* bubble_sort.c */
 void bubble_sort(int *array, size_t size);
 /* insertion_sort_list.c */

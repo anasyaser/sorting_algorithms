@@ -47,6 +47,7 @@ size_t partition(int *array, size_t low, size_t high)
 	return (i);
 }
 
+
 void quick_helper(int *array, size_t low, size_t high)
 {
 	size_t pi; /* pivot index */
@@ -54,9 +55,10 @@ void quick_helper(int *array, size_t low, size_t high)
 	if (low < high)
 	{
 		pi = partition(array, low, high);
-		printf("pi: %d\n", pi);
-		quick_helper(array, low, pi - 1);
+		if (pi != 0)
+			quick_helper(array, low, pi - 1);
 		quick_helper(array, pi + 1, high);
+		print_array(array, 1000);
 	}
 
 }

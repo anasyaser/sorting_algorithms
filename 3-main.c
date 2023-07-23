@@ -11,11 +11,9 @@ int main(void)
 	size_t n = sizeof(array) / sizeof(array[0]);
 
 	print_array(array, n);
-	n = 0;
-	n -= 1;
-	/* printf("\n"); */
-	/* quick_sort(array, n); */
-	/* printf("\n"); */
-	/* print_array(array, n); */
+	printf("\n");
+	quick_sort(array, n);
+	printf("\n");
+	print_array(array, n);
 	return (0);
 }
