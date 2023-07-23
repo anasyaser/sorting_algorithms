@@ -73,6 +73,7 @@ void quick_helper(int *array, size_t low, size_t high)
 
 void quick_sort(int *array, size_t size)
 {
+	/**/
 	/* quick_sort(array, pi); */
 	/* quick_sort(array + pi + 1, size - pi - 1);*/
 	quick_helper(array, 0, size - 1);
