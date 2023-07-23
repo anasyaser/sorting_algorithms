@@ -28,6 +28,7 @@ void swap(int *array, size_t i, size_t j);
 /* bubble_sort.c */
 void bubble_sort(int *array, size_t size);
 /* insertion_sort_list.c */
+void swap_nodes(listint_t *first, listint_t *second);
 void insert_between(listint_t *first, listint_t *second, listint_t *node);
 void insertion_sort_list(listint_t **list);
 /* selection_sort.c */
