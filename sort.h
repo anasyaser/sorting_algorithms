@@ -1,5 +1,5 @@
-#ifndef CALC_PROG
-#define CALC_PROG
+#ifndef ALGORITHM
+#define ALGORITHM
 
 #include <stdio.h>
 #include <string.h>
@@ -35,4 +35,5 @@ void swap(int *array, size_t i, size_t j);
 size_t partition(int *array, size_t low, size_t high);
 void quick_sort(int *array, size_t size);
 void quick_helper(int *array, size_t low, size_t high);
+
 #endif
