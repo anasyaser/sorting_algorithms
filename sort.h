@@ -29,11 +29,11 @@ void swap(int *array, size_t i, size_t j);
 void bubble_sort(int *array, size_t size);
 /* insertion_sort_list.c */
 void swap_nodes(listint_t *first, listint_t *second);
-void insert_between(listint_t *first, listint_t *second, listint_t *node);
 void insertion_sort_list(listint_t **list);
 /* selection_sort.c */
 void selection_sort(int *array, size_t size);
 /* quick_sort.c */
+void swap(int *array, size_t i, size_t j);
 size_t partition(int *array, size_t low, size_t high);
 void quick_sort(int *array, size_t size);
 #endif
