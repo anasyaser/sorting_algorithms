@@ -35,5 +35,9 @@ void swap(int *array, int i, int j, size_t total_size);
 size_t partition(int *array, size_t low, size_t high, size_t total);
 void quick_sort(int *array, size_t size);
 void quick_helper(int *array, size_t low, size_t high, size_t total);
+/* shell_sort.c */
+void swap_int(int *array, int i, int j);
+void shell_sort(int *array, size_t size);
+/* cocktail_sort_list.c */
 
 #endif
