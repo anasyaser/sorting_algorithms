@@ -39,5 +39,7 @@ void quick_helper(int *array, size_t low, size_t high, size_t total);
 void swap_int(int *array, int i, int j);
 void shell_sort(int *array, size_t size);
 /* cocktail_sort_list.c */
-
+void coctail_sort(listint_t **list);
+/* counting_sort.c */
+void counting_sort(int *array, size_t size);
 #endif
