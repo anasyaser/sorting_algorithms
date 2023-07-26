@@ -42,4 +42,6 @@ void shell_sort(int *array, size_t size);
 void coctail_sort(listint_t **list);
 /* counting_sort.c */
 void counting_sort(int *array, size_t size);
+/* merge_sort.c*/
+void merge_sort(int *array, size_t size);
 #endif
